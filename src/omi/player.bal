@@ -79,6 +79,10 @@ public type TerminalPlayer object {
 
         var cardIndex = ints:fromString(io:readln("Select a card (index starting from 1): "));
         if (cardIndex is int) {
+            if (cardIndex <= 1 && cardIndex > self.cards.length()) {
+                error e = error("Invalid input for the card!");
+                panic e;
+            }
             Card selectedCard = <@untainted> self.cards.remove(cardIndex - 1);
             io:println("Your choice: " + selectedCard.symbol.toString() + " " + selectedCard.value.toString());
             return selectedCard;
