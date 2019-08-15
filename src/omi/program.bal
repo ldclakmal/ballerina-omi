@@ -26,10 +26,10 @@ public function main() returns error? {
     // todo: update for distribution of cards in 2 iterations: before declaring the trump and after declaring the trump
 
     // todo: comment followings after completion
-    foreach Player p in game.players {
-        io:print("Cards of " + p.name + " : ");
-        printCards(p.cards);
-    }
+    //foreach Player p in game.players {
+    //    io:print("Cards of " + p.name + " : ");
+    //    printCards(p.cards);
+    //}
 
     io:println("----------------------------------------------------------------------------------------------------");
     io:println("Starting the game...");
