@@ -1,0 +1,10 @@
+# IDE files
+.ballerina/
+target/
+.idea/
+.vscode/
+*.iml
+
+# Ballerina
+*.conf
+*.log
