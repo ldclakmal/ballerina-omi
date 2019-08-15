@@ -8,3 +8,4 @@ target/
 # Ballerina
 *.conf
 *.log
+*.lock
