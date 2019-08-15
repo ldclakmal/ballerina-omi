@@ -33,5 +33,12 @@ public function main() returns error? {
 
     io:println("----------------------------------------------------------------------------------------------------");
     io:println("Starting the game...");
-    result = game.startGame();
+    game.startGame();
+
+    io:println("----------------------------------------------------------------------------------------------------");
+    io:println("Scores: ");
+    foreach Player p in game.players {
+        io:print("Player " + p.name + " score: ");
+        io:println(p.score);
+    }
 }

@@ -33,7 +33,7 @@ public type Game object {
         }
     }
 
-    public function startGame() returns error? {
+    public function startGame() {
         TerminalPlayer terminalPlayer = <TerminalPlayer>self.players[0];
         self.trump = terminalPlayer.selectTrump();
 
