@@ -35,11 +35,23 @@ public type Game object {
 
     public function startGame() returns error? {
         TerminalPlayer terminalPlayer = <TerminalPlayer>self.players[0];
-
         self.trump = terminalPlayer.selectTrump();
 
-        foreach Player p in self.players {
-            p.play(self.trump);
+
+        while (terminalPlayer.cards.length() > 0) {
+            Player maxPlayer = terminalPlayer;
+            int maxScore = 0;
+            foreach Player p in self.players {
+                Card selectedCard = p.play(self.trump);
+                if (selectedCard.symbol == self.trump) {
+                    int currentScore = getCardNumericValue(selectedCard.value);
+                    if (maxScore < currentScore) {
+                        maxPlayer = p;
+                        maxScore = currentScore;
+                    }
+                }
+            }
+            maxPlayer.score += 1;
         }
     }
 };

@@ -4,8 +4,9 @@ public type Player abstract object {
 
     string name;
     Card[] cards;
+    int score;
 
-    public function play(SYMBOL? trump);
+    public function play(SYMBOL? trump) returns Card;
 };
 
 public type ComputerPlayer object {
@@ -15,11 +16,10 @@ public type ComputerPlayer object {
     public function __init(string name) {
         self.name = name;
         self.cards = [];
+        self.score = 0;
     }
 
-    public function play(SYMBOL? trump) {
-        io:println("Player " + self.name + " turn...");
-
+    public function play(SYMBOL? trump) returns Card {
         Card[] trumpSet = [];
         Card[] nonTrumpSet = [];
         foreach Card card in self.cards {
@@ -36,10 +36,10 @@ public type ComputerPlayer object {
             return getCardNumericValue(c2.value) - getCardNumericValue(c1.value);
         });
 
-        io:print("Sorted trump set: ");
-        printCards(sortedTrumpSet);
-        io:print("Sorted non-trump set: ");
-        printCards(sortedNonTrumpSet);
+        //io:print("Sorted trump set: ");
+        //printCards(sortedTrumpSet);
+        //io:print("Sorted non-trump set: ");
+        //printCards(sortedNonTrumpSet);
 
         Card selectedCard;
         if (sortedTrumpSet.length() > 0) {
@@ -47,7 +47,18 @@ public type ComputerPlayer object {
         } else {
             selectedCard = sortedNonTrumpSet.pop();
         }
+
+        int index = 0;
+        foreach Card card in self.cards {
+            if (card.symbol == selectedCard.symbol && card.value == selectedCard.value) {
+                break;
+            }
+            index += 1;
+        }
+        _ = self.cards.remove(index);
+
         io:println("Player " + self.name + " choice: " + selectedCard.symbol.toString() + " " + selectedCard.value.toString());
+        return selectedCard;
     }
 };
 
@@ -58,17 +69,19 @@ public type TerminalPlayer object {
     public function __init(string name) {
         self.name = name;
         self.cards = [];
+        self.score = 0;
     }
 
-    public function play(SYMBOL? trump) {
-        io:println("Your turn...");
+    public function play(SYMBOL? trump) returns Card {
+        io:println();
         io:print("Your cards: ");
         printCards(self.cards);
 
         var cardIndex = ints:fromString(io:readln("Select a card (index starting from 1): "));
         if (cardIndex is int) {
-            Card selectedCard = self.cards[cardIndex - 1];
+            Card selectedCard = <@untainted> self.cards.remove(cardIndex - 1);
             io:println("Your choice: " + selectedCard.symbol.toString() + " " + selectedCard.value.toString());
+            return selectedCard;
         } else {
             panic cardIndex;
         }
