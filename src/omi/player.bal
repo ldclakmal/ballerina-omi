@@ -92,6 +92,17 @@ public type TerminalPlayer object {
 
     public function selectTrump() returns SYMBOL? {
         io:println("Selecting the Trump...");
+        io:print("Your cards: ");
+        int index = 0;
+        foreach Card card in self.cards {
+            io:print(card.symbol.toString() + " " + card.value.toString() + ", ");
+            index += 1;
+            if (index == 4) {
+                io:println();
+                break;
+            }
+        }
+
         io:println("1. Hearts " + HEARTS);
         io:println("2. Clubs " + CLUBS);
         io:println("3. Diamonds " + DIAMONDS);

@@ -41,7 +41,7 @@ public type Game object {
 
 
         while (terminalPlayer.cards.length() > 0) {
-            io:println("---");
+            io:println("----------------------------------------------------------------------------------------------------");
             Player maxPlayer = terminalPlayer;
             int maxScore = 0;
             foreach Player p in self.players {
