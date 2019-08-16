@@ -31,14 +31,6 @@ public function main() returns error? {
     //    printCards(p.cards);
     //}
 
-    io:println("----------------------------------------------------------------------------------------------------");
-    io:println("Starting the game...");
     game.startGame();
-
-    io:println("----------------------------------------------------------------------------------------------------");
-    io:println("Scores: ");
-    foreach Player p in game.players {
-        io:print("Player " + p.name + " score: ");
-        io:println(p.score);
-    }
+    game.printScore();
 }

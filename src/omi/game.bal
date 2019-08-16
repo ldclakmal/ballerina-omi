@@ -34,6 +34,8 @@ public type Game object {
     }
 
     public function startGame() {
+        io:println("----------------------------------------------------------------------------------------------------");
+        io:println("Starting the game...");
         TerminalPlayer terminalPlayer = <TerminalPlayer>self.players[0];
         self.trump = terminalPlayer.selectTrump();
 
@@ -54,9 +56,18 @@ public type Game object {
             maxPlayer.score += 1;
         }
     }
+
+    public function printScore() {
+        io:println("----------------------------------------------------------------------------------------------------");
+        io:println("Printing scores of the game...");
+        foreach Player p in self.players {
+            io:print("Player " + p.name + " score: ");
+            io:println(p.score);
+        }
+    }
 };
 
-public function printCards(Card[] cards) {
+function printCards(Card[] cards) {
     foreach Card card in cards {
         io:print(card.symbol.toString() + " " + card.value.toString() + ", ");
     }
