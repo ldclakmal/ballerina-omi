@@ -4,29 +4,38 @@
 
 ## How to play
 
-// TBD
+There are 4 players including you (terminal player). Your inputs will be given in the terminal and rest 3 players (computer players) will be played intelligently.
+
+-  Build the project and run the module. `ballerina run omi`
+
+
+### Sample output
 
 ```
 --- Welcome to OMI ---
-Initializing the game...
-You are player P1...
-Card Pack: ♥ A, ♥ K, ♥ Q, ♥ J, ♥ 10, ♥ 9, ♥ 8, ♥ 7, ♣ A, ♣ K, ♣ Q, ♣ J, ♣ 10, ♣ 9, ♣ 8, ♣ 7, ♦ A, ♦ K, ♦ Q, ♦ J, ♦ 10, ♦ 9, ♦ 8, ♦ 7, ♠ A, ♠ K, ♠ Q, ♠ J, ♠ 10, ♠ 9, ♠ 8, ♠ 7, 
+- YOU ARE PLAYER P1 -
 ----------------------------------------------------------------------------------------------------
 Starting the game...
 Selecting the Trump...
+Your cards: ♣ Q, ♥ J, ♠ J, ♣ 8, 
 1. Hearts ♥
 2. Clubs ♣
 3. Diamonds ♦
 4. Spades ♠
-Enter Trump Choice: 1
-
-Your cards: ♦ J, ♠ 7, ♦ 8, ♣ K, ♠ Q, ♣ A, ♠ A, ♦ Q, 
-Select a card (index starting from 1): 2
-Your choice: ♠ 7
-Player P2 choice: ♥ A
-Player P3 choice: ♥ K
-Player P4 choice: ♥ Q
-
-Your cards: ♦ J, ♦ 8, ♣ K, ♠ Q, ♣ A, ♠ A, ♦ Q, 
-Select a card (index starting from 1): 3
+Enter Trump Choice: 2
+----------------------------------------------------------------------------------------------------
+Your cards: ♣ Q, ♥ J, ♠ J, ♣ 8, ♠ Q, ♣ 9, ♣ 7, ♣ A, 
+Select a card (index starting from 1): 1
+Your choice: ♣ Q
+Player P2 choice: ♣ K
+Player P3 choice: ♥ 7
+Player P4 choice: ♠ 7
+----------------------------------------------------------------------------------------------------
+Player P2 choice: ♣ J
+Player P3 choice: ♦ 8
+Player P4 choice: ♥ 8
+Your cards: ♥ J, ♠ J, ♣ 8, ♠ Q, ♣ 9, ♣ 7, ♣ A, 
+Select a card (index starting from 1): 1
+Your choice: ♥ J
+----------------------------------------------------------------------------------------------------
 ```
