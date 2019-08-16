@@ -41,6 +41,7 @@ public type Game object {
 
 
         while (terminalPlayer.cards.length() > 0) {
+            io:println("---");
             Player maxPlayer = terminalPlayer;
             int maxScore = 0;
             foreach Player p in self.players {
@@ -54,6 +55,14 @@ public type Game object {
                 }
             }
             maxPlayer.score += 1;
+
+            foreach Player p in self.players {
+                if (p.name != maxPlayer.name) {
+                    self.players.push(self.players.shift());
+                } else {
+                    break;
+                }
+            }
         }
     }
 

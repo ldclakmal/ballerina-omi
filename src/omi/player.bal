@@ -73,7 +73,6 @@ public type TerminalPlayer object {
     }
 
     public function play(SYMBOL? trump) returns Card {
-        io:println();
         io:print("Your cards: ");
         printCards(self.cards);
 
