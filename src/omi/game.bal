@@ -1,6 +1,5 @@
 import ballerina/io;
 import ballerina/math;
-import ballerina/lang.'int as ints;
 
 public type Game object {
 
@@ -85,14 +84,14 @@ function printCards(Card[] cards) {
 
 function getCardNumericValue(VALUE value) returns int {
     match value {
-        VALUE_7 => return 7;
-        VALUE_8 => return 8;
-        VALUE_9 => return 9;
-        VALUE_10 => return 10;
-        VALUE_J => return 11;
-        VALUE_Q => return 12;
-        VALUE_K => return 13;
-        VALUE_A => return 14;
+        VALUE_7 => { return 7; }
+        VALUE_8 => { return 8; }
+        VALUE_9 => { return 9; }
+        VALUE_10 => { return 10; }
+        VALUE_J => { return 11; }
+        VALUE_Q => { return 12; }
+        VALUE_K => { return 13; }
+        VALUE_A => { return 14; }
     }
     return -1;
 }

@@ -2,6 +2,12 @@
 
 > This project was initiated as an effort of testing Ballerina v1.0.0-beta.
 
+## Compatibility
+
+| Ballerina Language Version |
+|:--------------------------:|
+| 1.0                        |
+
 ## How to play
 
 There are 4 players including you (terminal player). Your inputs will be given in the terminal and rest 3 players (computer players) will be played intelligently.

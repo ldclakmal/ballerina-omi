@@ -1,5 +1,3 @@
-import ballerina/io;
-
 //public const string HEARTS = "Hearts ♥";
 //public const string CLUBS = "Clubs ♣";
 //public const string DIAMONDS = "Diamonds ♦";

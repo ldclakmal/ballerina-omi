@@ -1,4 +1,5 @@
 import ballerina/io;
+import ballerina/lang.'int as ints;
 
 public type Player abstract object {
 
@@ -111,10 +112,10 @@ public type TerminalPlayer object {
         if (choice is int) {
             if (choice >= 1 && choice <= 4) {
                 match choice {
-                    1 => return HEARTS;
-                    2 => return CLUBS;
-                    3 => return DIAMONDS;
-                    4 => return SPADES;
+                    1 => { return HEARTS; }
+                    2 => { return CLUBS; }
+                    3 => { return DIAMONDS; }
+                    4 => { return SPADES; }
                 }
             } else {
                 error e = error("Invalid Choice of Trump!");
