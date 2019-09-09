@@ -1,5 +1,9 @@
 [project]
-org-name= "chanakal"
-version= "0.1.0"
+org-name = "ldclakmal"
+version = "0.1.0"
+authors = ["Chanaka Lakmal"]
+keywords = ["omi game", "omi", "game"]
+repository = "https://github.com/ldclakmal/ballerina-omi"
+license = ["Apache-2.0"]
 
 [dependencies]
